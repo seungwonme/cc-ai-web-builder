@@ -1,0 +1,20 @@
+{
+  "contextFileName": ["GEMINI.md", "CLAUDE.md"], // 메모리 파일 지정
+  "excludeTools": ["run_shell_command(rm -rf)"], // 핵심 도구 제외하기
+  "authAccept": true, // 안전한 도구 사용 허용
+  "mcpServers": {
+    "playwright": {
+      "command": "bunx",
+      "args": ["@playwright/mcp@latest"]
+    },
+    "sequential-thinking": {
+      "command": "bunx",
+      "args": ["@modelcontextprotocol/server-sequential-thinking"]
+    },
+    "context7": {
+      "command": "bunx",
+      "args": ["@upstash/context7-mcp"]
+    }
+  }, // MCP 서버 지정
+  "checkpointing": { "enabled": true } // 체크포인트 활성화
+}
